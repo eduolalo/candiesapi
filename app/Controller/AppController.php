@@ -28,8 +28,17 @@ App::uses('Controller', 'Controller');
  * Add your application-wide methods in the class below, your controllers
  * will inherit them.
  *
- * @package		app.Controller
- * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
+ * @package   app.Controller
+ * @link    http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+  
+  public function response( $data ) {
+    $this->layout = 'ajax';
+    if ( empty( $data ) ) {
+      $data = array();
+    }
+    $this->set( 'response', $data );
+    $this->render( '/Json/json/' );
+  }
 }
