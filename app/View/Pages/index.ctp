@@ -1,0 +1,1 @@
+<h1><?php echo 'Acceso denegado!' ?></h1>
