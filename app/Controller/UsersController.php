@@ -7,6 +7,15 @@ App::uses('AppController', 'Controller');
  */
 class UsersController extends AppController {
 
+  public function beforeFilter() {
+    parent::beforeFilter();
+    $this->Auth->allow('add');
+}
+
+  public function login() {
+    $this->response( $this->request );
+  }
+
 /**
  * index method
  *
@@ -39,15 +48,41 @@ class UsersController extends AppController {
  * @return void
  */
   public function add() {
-    if ($this->request->is('post')) {
-      $this->User->create();
-      if ($this->User->save($this->request->data)) {
-        $this->Session->setFlash(__('The user has been saved'));
-        $this->redirect(array('action' => 'index'));
-      } else {
-        $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
+    $request = $this->getData( $this->request );
+    if ( empty($request) ) {
+      $this->response( array() );
+      return;
+    }
+    $error = false;
+    foreach ($request as $key => $value) {
+      if ( empty($value) ) {
+        $error = array(
+          'error' => array(
+            $key => 'fill: ' . $key
+          )
+        );
+        break;
       }
     }
+    if ( $error ){
+      $this->response( $error );
+      return;
+    }
+    $this->request->data[ 'User' ][ 'password' ] = $request[ 'password' ];
+    $this->request->data[ 'User' ][ 'email' ] = $request[ 'email' ];
+    $this->request->data[ 'User' ][ 'user' ] = $request[ 'user' ];
+    $this->request->data[ 'User' ][ 'name' ] = $request[ 'user' ];
+    if ( $this->User->save( $this->request->data ) ) {
+      $data = array(
+        'id' => $this->User->id
+      );
+    } else {
+      $data = array(
+        'error' => $this->User->invalidFields()
+      );
+    }
+    $this->response( $data );
+    return;
   }
 
 /**

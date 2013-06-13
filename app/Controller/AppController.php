@@ -33,12 +33,25 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
   
-  public function response( $data ) {
+  public $components = array(
+        'Session',
+        'Auth' => array(
+            'loginRedirect' => array('controller' => 'users', 'action' => 'index'),
+            'logoutRedirect' => array('controller' => 'users', 'action' => 'index')
+        )
+    );
+
+  function response( $data ) {
     $this->layout = 'ajax';
     if ( empty( $data ) ) {
       $data = array();
     }
     $this->set( 'response', $data );
     $this->render( '/Json/json/' );
+  }
+
+  function getData( $request ) {
+    $model = $request->data[ 'model' ];
+    return $model = get_object_vars( json_decode( $model ) );
   }
 }
