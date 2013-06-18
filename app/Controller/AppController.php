@@ -52,6 +52,6 @@ class AppController extends Controller {
 
   function getData( $request ) {
     $model = $request->data[ 'model' ];
-    return $model = get_object_vars( json_decode( $model ) );
+    return $model;
   }
 }
