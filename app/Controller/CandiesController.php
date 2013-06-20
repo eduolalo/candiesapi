@@ -11,6 +11,20 @@ class CandiesController extends AppController {
  *
  * @var mixed
  */
-	public $scaffold;
+  public $scaffold;
+
+public function beforeFilter() {
+  parent::beforeFilter();
+  $this->Auth->allow( array(
+    'index'
+  ));
+}
+
+function index(){
+  $candies = $this->Candy->find( 'all', array(
+    'recursive' => -1,
+  ) );
+  $this->response( $candies );
+}
 
 }

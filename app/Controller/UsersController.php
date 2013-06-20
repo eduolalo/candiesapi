@@ -13,7 +13,9 @@ class UsersController extends AppController {
 }
 
   public function login() {
-    $this->response( $this->request );
+    $this->response( array(
+      'message' => 'Nothing to see here!'
+    ));
   }
 
 /**
@@ -24,7 +26,9 @@ class UsersController extends AppController {
   public function index() {
     $this->User->recursive = 1;
     
-    $this->response( $this );
+    $this->response( array(
+      'message' => 'Nothing to see here!'
+    ));
   }
 
 /**
