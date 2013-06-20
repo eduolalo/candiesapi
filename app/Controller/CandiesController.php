@@ -27,4 +27,12 @@ function index(){
   $this->response( $candies );
 }
 
+function get( $name ) {
+  if( empty( $name ) ){
+    $this->response( array() );
+    return;
+  }
+  $candy = $this->Candy->find( 'first', );
+}
+
 }
