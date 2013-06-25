@@ -32,7 +32,7 @@ function get( $name ) {
     $this->response( array() );
     return;
   }
-  $candy = $this->Candy->find( 'first', );
+  $candy = $this->Candy->find( 'first' );
 }
 
 }
