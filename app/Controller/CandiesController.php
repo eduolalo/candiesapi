@@ -29,7 +29,9 @@ function index(){
 
 function candy( $name ) {
   if( empty( $name ) ){
-    $this->response( array() );
+    $this->response( array(
+      'error' => 'data is empty.'
+    ));
     return;
   }
   $candy = $this->Candy->find( 'first', array(
