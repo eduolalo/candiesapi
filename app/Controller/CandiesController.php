@@ -16,7 +16,7 @@ class CandiesController extends AppController {
 public function beforeFilter() {
   parent::beforeFilter();
   $this->Auth->allow( array(
-    'index'
+    'index', 'candy'
   ));
 }
 
@@ -27,12 +27,18 @@ function index(){
   $this->response( $candies );
 }
 
-function get( $name ) {
+function candy( $name ) {
   if( empty( $name ) ){
     $this->response( array() );
     return;
   }
-  $candy = $this->Candy->find( 'first' );
+  $candy = $this->Candy->find( 'first', array(
+    'conditions' => array(
+      'Candy.name' => $name
+    ),
+    'recursive' => -1,
+  ));
+  $this->response( $candy );
 }
 
 }
