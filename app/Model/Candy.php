@@ -45,7 +45,7 @@ class Candy extends AppModel {
       ),
       'isUnique' => array(
         'rule' => 'isUnique',
-        'message' => 'This URL is already taken',
+        'message' => 'This repo is already registered',
       ),
     ),
     'description' => array(

@@ -21,6 +21,7 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 App::uses('Controller', 'Controller');
+App::import('Lib', 'CustomResponse');
 
 /**
  * Application Controller
@@ -33,6 +34,8 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
   
+  protected $_responseClass = 'CustomResponse';
+
   public $components = array(
         'Session',
         'Auth' => array(

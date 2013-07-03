@@ -16,7 +16,7 @@ class CandiesController extends AppController {
 public function beforeFilter() {
   parent::beforeFilter();
   $this->Auth->allow( array(
-    'index', 'candy'
+    'index', 'candy', 'add'
   ));
 }
 
@@ -47,6 +47,26 @@ function candy( $name ) {
     'recursive' => -1,
   ));
   $this->response( $candy );
+}
+
+function add(){
+  if ( empty($this->request->query) ) {
+    $this->response( array(
+      'error' => 'Not candy to save'
+    ));
+    return;
+  }
+  if ( $this->Candy->save( $this->request->query ) ) {
+    $this->response( array(
+      'ok' => 'Candy Saved!'
+    ));
+    return;
+  } else {
+    $this->response( array(
+        'error' => $this->Candy->invalidFields()
+    ));
+    return;
+  }
 }
 
 }

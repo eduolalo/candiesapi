@@ -54,7 +54,7 @@ class UsersController extends AppController {
   public function add() {
     $request = $this->getData( $this->request );
     if ( empty($request) ) {
-      $this->response( array() );
+      $this->response();
       return;
     }
     $error = false;
