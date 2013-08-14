@@ -47,6 +47,10 @@ class Candy extends AppModel {
         'rule' => 'isUnique',
         'message' => 'This repo is already registered',
       ),
+      'website' => array(
+        'rule' => array('url', true),
+        'message' => 'Insert a valir url format.'
+      ),
     ),
     'description' => array(
       'notempty' => array(
