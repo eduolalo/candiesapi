@@ -26,13 +26,6 @@ function index(){
   ) );
   $this->response( $candies );
 }
-function view($id) {
-  $candy = $this->Candy->findById($id);
-  $this->set(array(
-    'candy' => $candy,
-    '_serialize' => array('candy')
-  ));
-}
 function candy( $name ) {
   if( empty( $name ) ){
     $this->response( array(
