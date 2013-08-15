@@ -48,8 +48,12 @@ class Candy extends AppModel {
         'message' => 'This repo is already registered',
       ),
       'website' => array(
-        'rule' => array('url', true),
-        'message' => 'Insert a valir url format.'
+        'rule' => 'ValidURL',
+        'message' => 'Insert a valir url format: http or https'
+      ),
+      'Exist' => array(
+        'rule' => 'existURL',
+        'message' => 'This URL does not exist.'
       ),
     ),
     'description' => array(
@@ -73,6 +77,29 @@ class Candy extends AppModel {
       ),
     ),
   );
+
+public function ValidURL() {
+  $url = $this->data['Candy']['url'];
+  if (filter_var($url, FILTER_VALIDATE_URL)){
+    return true;
+  }
+  return false;
+}
+
+public function existURL() {
+  $url = $this->data['Candy']['url'];
+  if (filter_var($url, FILTER_VALIDATE_URL)){
+    $getUrl = curl_init($url);
+    curl_setopt($getUrl,  CURLOPT_RETURNTRANSFER, TRUE);
+    curl_exec($getUrl);
+    $httpCode = curl_getinfo($getUrl, CURLINFO_HTTP_CODE);
+    if($httpCode == 404 || $httpCode == 401 || $httpCode == 400 || $httpCode == 403 || $httpCode == 500) {
+      return false;    
+    }
+    return true;
+  }
+  return false;
+}
 
   //The Associations below have been created with all possible keys, those that are not needed can be removed
 
