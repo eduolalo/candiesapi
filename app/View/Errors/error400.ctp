@@ -18,15 +18,33 @@
  */
 ?>
 <h2><?php echo $name; ?></h2>
+  <div class="nf-container">
+    <div class="nf-img">
+      <img src="/candiesapi/img/404.png">
+    </div>
+    <div class="nf img">
+      <div class="bubble_wrap">
+        <div class="bubbles b0"></div>
+        <div class="bubbles b1"></div>
+        <div class="bubbles b2"></div>
+        <!-- <div class="bubbles b3"></div> -->
+        <div class="bubbles b4"></div>
+        <div class="bubbles b5"></div>
+      </div>
+    </div>
+    <div class="nf-img">
+      <img class="hat" src="/candiesapi/icon.png">
+    </div>
+  </div>
 <p class="error">
-	<strong><?php echo __d('cake', 'Error'); ?>: </strong>
-	<?php printf(
-		__d('cake', 'The requested address %s was not found on this server.'),
-		"<strong>'{$url}'</strong>"
-	); ?>
+  <strong><?php echo __d('cake', 'Error'); ?>: </strong>
+  <?php printf(
+    __d('cake', 'The requested address %s was not found on this server.'),
+    "<strong>'{$url}'</strong>"
+  ); ?>
 </p>
 <?php
 if (Configure::read('debug') > 0):
-	echo $this->element('exception_stack_trace');
+  echo $this->element('exception_stack_trace');
 endif;
 ?>
