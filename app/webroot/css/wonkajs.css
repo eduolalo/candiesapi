@@ -1,0 +1,418 @@
+body {
+  background: #130722;
+}
+h1 {
+  font-size: 60px;
+}
+h2 {
+  font-size: 32px;
+}
+h1,
+h2 {
+  text-align: center;
+  font-family: Zapf Chancery, cursive;
+  color: white;
+}
+.wjs-instructions {
+  background: white;
+  font-family: helvetica, arial;
+  color: #4d4d4d;
+  width: 94%;
+  padding: 1%;
+  margin: 0 auto;
+  box-shadow: inset 0 0 15px black;
+  border-radius: 6px;
+}
+.wjs-footer {
+  font-family: helvetica, arial;
+  width: 94%;
+  padding: 1%;
+  margin: 0 auto;
+  border-radius: 6px;
+  text-align: right;
+}
+#loading-bar {
+  background: white;
+  padding: 10px!important;
+  box-shadow: inset 0 -3px 2px #000000;
+}
+#progress-bar {
+  height: 20px;
+  background: rgba(19, 7, 34, 0.9);
+  border: 0!important;
+}
+#progress-bar::-webkit-progress-bar {
+  background: #999;
+}
+#progress-bar::-webkit-progress-value {
+  background: #999;
+}
+#progress-bar::-moz-progress-bar {
+  background: #999;
+}
+.nf-container{
+  text-align: center;
+}
+.nf-img {
+  text-align: center;
+}
+.nf-img > img {
+  width: 30%;
+}
+.nf-img > .hat {
+  height: 50px;
+  width:  50px;
+  margin-top: -35px; 
+  position: absolute;
+  left: 650px;
+  top:351px;
+  z-index: 1000;
+}
+.bubble_wrap{
+  text-align: center;
+  height: 150px;
+  left: 609px;
+  position: absolute;
+  top: 69px;
+  width: auto;
+}
+.bubbles{
+  background-color: #130722;
+  border-radius: 100px 100px 100px 100px;
+  -moz-border-radius: 100px 100px 100px 100px;
+  -webkit-border-radius: 100px 100px 100px 100px;
+  -o-border-radius: 100px 100px 100px 100px;
+  -ms-border-radius: 100px 100px 100px 100px;
+  height: 5px;
+  left: 33px;
+  position: absolute;
+  top: 260px;
+  width: 5px;
+}
+.b0{
+  left: 49px;
+  top: 260px;
+  height: 3px;
+  width: 3px;
+}.b1{
+  left: 55px;
+  top: 260px;
+}
+.b2{
+  left: 51px;
+  top: 260px;
+  height: 3px;
+  width: 3px;
+}
+.b3{
+  left: 60px;
+  top: 260px;
+}
+.b4{
+  left: 73px;
+  top: 260px;
+  height: 3px;
+  width: 3px;
+}
+.b5{
+  left: 66px;
+  top: 260px;
+}
+
+.b0{
+  animation-name:bubbles;
+  animation-delay:2s;
+  animation-duration:4s;
+  animation-iteration-count:infinite;
+  animation-timing-function: linear;
+  
+  -moz-animation-name:bubbles;
+  -moz-animation-delay:2s;
+  -moz-animation-duration:4s;
+  -moz-animation-iteration-count:infinite;
+  -moz-animation-timing-function: linear;
+  
+  -webkit-animation-name:bubbles;
+  -webkit-animation-delay:2s;
+  -webkit-animation-duration:4s;
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-timing-function: linear;
+}
+@keyframes bubbles{
+  from{
+    top:260px;
+    left:33px;
+  }
+  50%{
+    left:39px;
+  }
+  to{
+    top:0px;
+    left:33px;
+  }
+}
+@-moz-keyframes bubbles{
+  from{
+    top:260px;
+    left:33px;
+  }
+  50%{
+    left:39px;
+  }
+  to{
+    top:0px;
+    left:33px;
+  }
+}
+@-webkit-keyframes bubbles{
+  from{
+    top:260px;
+    left:33px;
+  }
+  50%{
+    left:39px;
+  }
+  to{
+    top:0px;
+    left:33px;
+  }
+}
+.b1{
+  animation-name:bubbles;
+  animation-duration:7s;
+  animation-iteration-count:infinite;
+  animation-timing-function: linear;
+  
+  -moz-animation-name:bubbles;
+  -moz-animation-duration:7s;
+  -moz-animation-iteration-count:infinite;
+  -moz-animation-timing-function: linear;
+  
+  -webkit-animation-name:bubbles;
+  -webkit-animation-duration:7s;
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-timing-function: linear;
+}
+@keyframes bubbles{
+  from{
+    top:260px;
+  }
+  to{
+    top:0px;
+  }
+}
+@-moz-keyframes bubbles{
+  from{
+    top:260px;
+  }
+  to{
+    top:0px;
+  }
+}
+@-webkit-keyframes bubbles{
+  from{
+    top:260px;
+  }
+  to{
+    top:0px;
+  }
+}
+.b2{
+  animation-name:bubbles;
+  animation-delay:1s;
+  animation-duration:4s;
+  animation-iteration-count:infinite;
+  animation-timing-function: linear;
+  
+  -moz-animation-name:bubbles;
+  -moz-animation-delay:1s;
+  -moz-animation-duration:4s;
+  -moz-animation-iteration-count:infinite;
+  -moz-animation-timing-function: linear;
+  
+  -webkit-animation-name:bubbles;
+  -webkit-animation-delay:1s;
+  -webkit-animation-duration:4s;
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-timing-function: linear;
+}
+@keyframes bubbles{
+  from{
+    top:260px;
+  }
+  to{
+    top:0px;
+  }
+}
+@-moz-keyframes bubbles{
+  from{
+    top:260px;
+  }
+  to{
+    top:0px;
+  }
+}
+@-webkit-keyframes bubbles{
+  from{
+    top:260px;
+  }
+  to{
+    top:0px;
+  }
+}
+.b3{
+  animation-name:bubbles;
+  animation-delay:500s;
+  animation-duration:3s;
+  animation-iteration-count:infinite;
+  animation-timing-function: linear;
+  
+  -moz-animation-name:bubbles;
+  -moz-animation-delay:500s;
+  -moz-animation-duration:3s;
+  -moz-animation-iteration-count:infinite;
+  -moz-animation-timing-function: linear;
+  
+  -webkit-animation-name:bubbles;
+  -webkit-animation-delay:500s;
+  -webkit-animation-duration:3s;
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-timing-function: linear;
+}
+@keyframes bubbles{
+  from{
+    top:260px;
+    left:60px;
+  }
+  25%{
+    left:30px;
+  }
+  50%{
+    left:58px;
+  }
+  75%{
+    left:37px;
+  }
+  to{
+    top:0px;
+    left:60px;
+  }
+}
+@-moz-keyframes bubbles{
+  from{
+    top:260px;
+    left:60px;
+  }
+  25%{
+    left:30px;
+  }
+  50%{
+    left:58px;
+  }
+  75%{
+    left:37px;
+  }
+  to{
+    top:0px;
+    left:60px;
+  }
+}
+@-webkit-keyframes bubbles{
+  from{
+    top:260px;
+    left:60px;
+  }
+  25%{
+    left:30px;
+  }
+  50%{
+    left:58px;
+  }
+  75%{
+    left:37px;
+  }
+  to{
+    top:0px;
+    left:60px;
+  }
+}
+.b4{
+  animation-name:bubbles;
+  animation-duration:6s;
+  animation-iteration-count:infinite;
+  animation-timing-function: linear;
+  
+  -moz-animation-name:bubbles;
+  -moz-animation-duration:6s;
+  -moz-animation-iteration-count:infinite;
+  -moz-animation-timing-function: linear;
+  
+  -webkit-animation-name:bubbles;
+  -webkit-animation-duration:6s;
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-timing-function: linear;
+}
+@keyframes bubbles{
+  from{
+    top:260px;
+  }
+  to{
+    top:0px;
+  }
+}
+@-moz-keyframes bubbles{
+  from{
+    top:260px;
+  }
+  to{
+    top:0px;
+  }
+}
+@-webkit-keyframes bubbles{
+  from{
+    top:260px;
+  }
+  to{
+    top:0px;
+  }
+}
+.b5{
+  animation-name:bubbles;
+  animation-duration:5s;
+  animation-iteration-count:infinite;
+  animation-timing-function: linear;
+  
+  -moz-animation-name:bubbles;
+  -moz-animation-duration:5s;
+  -moz-animation-iteration-count:infinite;
+  -moz-animation-timing-function: linear;
+  
+  -webkit-animation-name:bubbles;
+  -webkit-animation-duration:5s;
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-timing-function: linear;
+}
+@keyframes bubbles{
+  from{
+    top:260px;
+  }
+  to{
+    top:0px;
+  }
+}
+@-moz-keyframes bubbles{
+  from{
+    top:260px;
+  }
+  to{
+    top:0px;
+  }
+}
+@-webkit-keyframes bubbles{
+  from{
+    top:260px;
+  }
+  to{
+    top:0px;
+  }
+}

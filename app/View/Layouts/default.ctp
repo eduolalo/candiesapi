@@ -17,7 +17,7 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
+$cakeDescription = __d('cake_dev', 'Candies for WonkaJS framework');
 ?>
 <!DOCTYPE html>
 <html>
@@ -28,9 +28,9 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		<?php echo $title_for_layout; ?>
 	</title>
 	<?php
-		echo $this->Html->meta('icon');
+		echo $this->Html->meta('icon', $this->Html->url('/icon.png'));
 
-		echo $this->Html->css('cake.generic');
+		echo $this->Html->css('wonkajs');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -40,15 +40,15 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 <body>
 	<div id="container">
 		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
+			<h2><?php echo $this->Html->link($cakeDescription, 'http://wonkajs.com'); ?></h2>
 		</div>
-		<div id="content">
+		<div id="content" class="wjs-instructions">
 
 			<?php echo $this->Session->flash(); ?>
 
 			<?php echo $this->fetch('content'); ?>
 		</div>
-		<div id="footer">
+		<div id="footer" class="wjs-footer">
 			<?php echo $this->Html->link(
 					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
 					'http://www.cakephp.org/',
