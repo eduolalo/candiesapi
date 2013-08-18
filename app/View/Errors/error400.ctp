@@ -20,7 +20,7 @@
 <h2><?php echo $name; ?></h2>
   <div class="nf-container">
     <div class="nf-img">
-      <img src="/candiesapi/img/404.png">
+      <img src="/img/404.png">
     </div>
     <div class="nf img">
       <div class="bubble_wrap">
@@ -33,7 +33,7 @@
       </div>
     </div>
     <div class="nf-img">
-      <img class="hat" src="/candiesapi/icon.png">
+      <img class="hat" src="/icon.png">
     </div>
   </div>
 <p class="error">
